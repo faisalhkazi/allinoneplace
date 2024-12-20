@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All In One Place</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Full screen section styles */
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        section .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        section .content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        section .content a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+
+        section .content a:hover {
+            background-color: #e64a19;
+        }
+
+        /* Fixed navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#section_1">Home</a></li>
+            <li><a href="#section_2">About</a></li>
+            <li><a href="#section_3">Cards</a></li>
+            <li><a href="#section_4">Ebooks</a></li>
+            <li><a href="#section_5">Jobs Tips</a></li>
+            <li><a href="#section_6">Blogs</a></li>
+            <li><a href="#section_7">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="section_1" style="background-image: url('images/home-bg.jpg');">
+        <div class="content">
+            <h1>Welcome to Home</h1>
+            <a href="home.html">Go to Home Page</a>
+        </div>
+    </section>
+
+    <section id="section_2" style="background-image: url('images/about-bg.jpg');">
+        <div class="content">
+            <h1>About Us</h1>
+            <a href="about.html">Learn More</a>
+        </div>
+    </section>
+
+    <section id="section_3" style="background-image: url('images/cards-bg.jpg');">
+        <div class="content">
+            <h1>Cards Section</h1>
+            <a href="cards.html">View Cards</a>
+        </div>
+    </section>
+
+    <section id="section_4" style="background-image: url('images/ebooks-bg.jpg');">
+        <div class="content">
+            <h1>Ebooks Section</h1>
+            <a href="ebooks.html">Explore Ebooks</a>
+        </div>
+    </section>
+
+    <section id="section_5" style="background-image: url('images/jobs-bg.jpg');">
+        <div class="content">
+            <h1>Jobs Tips</h1>
+            <a href="jobs.html">Get Tips</a>
+        </div>
+    </section>
+
+    <section id="section_6" style="background-image: url('images/blogs-bg.jpg');">
+        <div class="content">
+            <h1>Blogs</h1>
+            <a href="blogs.html">Read Blogs</a>
+        </div>
+    </section>
+
+    <section id="section_7" style="background-image: url('images/contact-bg.jpg');">
+        <div class="content">
+            <h1>Contact Us</h1>
+            <a href="contact.html">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+        }
+        header {
+            background: url('images/blog.jpg') no-repeat center center/cover;
+            color: #FFA500;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .container {
+            width: 85%;
+            margin: 30px auto;
+            padding: 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+        }
+        .tabs button {
+            flex: 1;
+            margin: 0 10px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #444;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .tabs button:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+        .tabs button.active {
+            background: #777;
+        }
+        .content {
+            flex: 1;
+        }
+        .content .blog-section {
+            display: none;
+        }
+        .content .blog-section.active {
+            display: block;
+        }
+        .blog-list {
+            list-style: none;
+            padding: 0;
+        }
+        .blog-list li {
+            background: #333;
+            margin-bottom: 15px;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+        .blog-list li a {
+            text-decoration: none;
+            color: #FFA500;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .blog-list li a:hover {
+            color: #03a9f4;
+        }
+        .blog-list li p {
+            margin-top: 10px;
+            color: #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .welcome-text {
+      position: relative;
+      left: -300px;  /* Moves text to the left */
+      top: 80px;    /* Moves text down */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.blog-section');
+            const buttons = document.querySelectorAll('.tabs button');
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelector(`[data-section="${sectionId}"]`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('latest-blogs');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="welcome-text">Welcome to My Blog</h1>
+        <p class="welcome-text">Explore inspiring stories and ideas</p>
+    </header>
+    <div class="container">
+        <div class="tabs">
+            <button data-section="latest-blogs" onclick="showSection('latest-blogs')">Latest Blog Posts</button>
+            <button data-section="blog-collection" onclick="showSection('blog-collection')">Blog Collection</button>
+        </div>
+        <div class="content">
+            <div class="blog-section" id="latest-blogs">
+                <h2>Latest Blog Posts</h2>
+                <ul class="blog-list">
+                    <li>
+                        <a href="blog1.html">Blog Post 1: Embracing Change</a>
+                        <p>A quick look at why change is essential and how to embrace it gracefully.</p>
+                    </li>
+                    <li>
+                        <a href="blog2.html">Blog Post 2: The Art of Mindfulness</a>
+                        <p>Learn how to practice mindfulness to enhance your daily life and inner peace.</p>
+                    </li>
+                    <li>
+                        <a href="blog3.html">Blog Post 3: Unlocking Creativity</a>
+                        <p>Discover simple tips to unleash your creative potential and innovative ideas.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="blog-section" id="blog-collection">
+                <h2>Blog Collection</h2>
+                <ul class="blog-list">
+                    <li>
+                        <a href="blog1.html">Blog Post 1: Embracing Change</a>
+                        <p>A quick look at why change is essential and how to embrace it gracefully.</p>
+                    </li>
+                    <li>
+                        <a href="blog2.html">Blog Post 2: The Art of Mindfulness</a>
+                        <p>Learn how to practice mindfulness to enhance your daily life and inner peace.</p>
+                    </li>
+                    <li>
+                        <a href="blog3.html">Blog Post 3: Unlocking Creativity</a>
+                        <p>Discover simple tips to unleash your creative potential and innovative ideas.</p>
+                    </li>
+                    <li>
+                        <a href="blog4.html">Blog Post 4: Staying Motivated</a>
+                        <p>Find out how to maintain motivation and achieve your goals consistently.</p>
+                    </li>
+                    <li>
+                        <a href="blog5.html">Blog Post 5: Healthy Living Tips</a>
+                        <p>Simple ways to live a healthier and happier life every day.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Blog. All rights reserved. Designed with love.</p>
+    </footer>
+</body>
+</html>

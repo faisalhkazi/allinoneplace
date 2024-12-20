@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Book Design</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .book-container {
+            width: 80%;
+            max-width: 600px;
+            background: linear-gradient(to bottom right, #ffffff, #e6e6e6);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .book-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            height: 10px;
+            background: #ccc;
+            border-radius: 5px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .book-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: #0073e6;
+            font-weight: bold;
+        }
+
+        .bookmark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 60px;
+            background: linear-gradient(to bottom, #0073e6, #005bb5);
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .book-container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .book-header {
+                font-size: 20px;
+            }
+
+            .book-content {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="book-container">
+        <div class="bookmark">NEW</div>
+        <div class="book-header">Your Ultimate Destination</div>
+        <div class="book-content">
+            Your ultimate destination for <span class="highlight">everything you need</span>, right at your fingertips! Whether you're looking to boost your career with practical job tips, explore the best credit cards from top banks, dive into a world of knowledge with a variety of eBooks, or enhance your life with insightful blogs full of day-to-day hacks and techniques — it's all here.
+            <br><br>
+            But that's not all! We also offer <span class="highlight">free on-demand courses</span> to help you master daily crafts and skills, designed to inspire creativity and make everyday tasks more exciting.
+            <br><br>
+            No more endless searches, no more scattered resources. <strong>Discover, learn, and grow with ease.</strong> Everything you need, <span class="highlight">all in one place!</span>
+        </div>
+    </div>
+</body>
+
+</html>
