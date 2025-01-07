@@ -115,7 +115,27 @@
       left: -300px;  /* Moves text to the left */
       top: 80px;    /* Moves text down */
         }
+		
+		.custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FFA500; /* Blue background */
+  color: white; /* White text */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #ff7f00; /* Darker blue when hovered */
+}
+
+.custom-btn:focus {
+  outline: none; /* Removes the outline on focus */
+}
     </style>
+	
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script>
         function showSection(sectionId) {
@@ -144,6 +164,15 @@
         <h1 class="welcome-text">Welcome to My Blog</h1>
         <p class="welcome-text">Explore inspiring stories and ideas</p>
     </header>
+	<nav class="navbar navbar-expand-lg">
+	<div class="container">
+	<div class="content">
+	<nav>
+        <a class="btn custom-btn smoothscroll" href="index.html">Home</a>
+    </nav>
+	</div>
+	</div>
+	</nav>
     <div class="container">
         <div class="tabs">
             <button data-section="latest-blogs" onclick="showSection('latest-blogs')">Latest Blog Posts</button>
