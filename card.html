@@ -9,21 +9,41 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background-page.jpg'); /* Background image for the entire page */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background: url('images/card.jpg') no-repeat center center fixed; /* Full-page background */
+            background-size: cover; /* Ensure the image covers the entire viewport */
             color: #333;
         }
+
         header {
-            background-color: rgba(255, 112, 67, 0.9);
+            display: flex; /* Enables flexbox */
+            justify-content: space-between; /* Spaces items apart (left and center) */
+            align-items: center; /* Vertically aligns items */
+            background-color: rgba(34, 139, 34, 0.9); /* Green background */
             color: white;
-            padding: 1rem;
-            text-align: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-center {
+            position: absolute; /* Makes this section absolute */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjusts by 50% of its own width to truly center */
+            text-align: center; /* Centers text within its container */
+        }
+
         nav {
             margin: 1rem;
         }
+
         nav a {
             text-decoration: none;
             color: #ff7043;
@@ -33,37 +53,46 @@
             border: 1px solid #ff7043;
             border-radius: 5px;
         }
+
         nav a:hover {
             background-color: #ff7043;
             color: white;
         }
+
         section {
             padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 1rem auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            margin: 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 800px;
+            position: relative; /* Ensures it's layered above the background */
+            z-index: 1; /* Keeps it above the background */
         }
+
         section img {
             width: 100%;
             height: auto;
             border-radius: 5px;
         }
+
         section h2 {
             text-align: center;
             color: #ff7043;
         }
+
         section p {
             text-align: center;
             padding: 1rem;
         }
+
         .video-container {
             position: relative;
             width: 100%;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
         }
+
         .video-container iframe, .video-container video {
             position: absolute;
             top: 0;
@@ -71,6 +100,7 @@
             width: 100%;
             height: 100%;
         }
+
         .video-link {
             position: absolute;
             bottom: 10px;
@@ -83,54 +113,105 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
         .video-link:hover {
             background-color: #e64a19;
         }
+
         footer {
             text-align: center;
             padding: 1rem;
             background-color: rgba(255, 224, 178, 0.9);
             margin-top: 1rem;
         }
+
+        /* Flexbox to display sections in two columns */
+        .section-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 100px; /* Push sections down below the fixed header */
+        }
+
+        .section-container section {
+            flex: 1 1 calc(50% - 2rem); /* Each section takes up 50% of the space minus the gap */
+            margin: 1rem;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Credit Card Promotions</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
-
-    <!-- Bank 1 Section -->
-    <section>
-        <h2>Bank 1 Credit Card</h2>
-        <img src="bank1.jpg" alt="Bank 1 Credit Card">
-        <p>Earn rewards and get exclusive benefits with Bank 1 Credit Card.</p>
-        <div class="video-container">
-            <video controls>
-                <source src="bank1-promo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <a href="https://bank1-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+        <div class="header-center">
+            <h2>"Compare, Choose, and Apply for the Best Credit Cards — Simplified for You!"</h2>
         </div>
-    </section>
-
-    <!-- Bank 2 Section -->
-    <section>
-        <h2>Bank 2 Credit Card</h2>
-        <img src="bank2.jpg" alt="Bank 2 Credit Card">
-        <p>Get cashback on every purchase with Bank 2 Credit Card.</p>
-        <div class="video-container">
-            <video controls>
-                <source src="bank2-promo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <a href="https://bank2-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+        
+        <div class="header-left">
+            <nav>
+                <a href="index.html">Home</a>
+            </nav>    
         </div>
-    </section>
+    </header>   
+    
+    <!-- Container to hold the sections in two columns -->
+    <div class="section-container">
+        <!-- Bank 1 Section -->
+        <section>
+            <h2>Bank 1 Credit Card</h2>
+            <img src="bank1.jpg" alt="Bank 1 Credit Card">
+            <p>Earn rewards and get exclusive benefits with Bank 1 Credit Card.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="bank1-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a href="https://bank1-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+            </div>
+        </section>
 
-    <!-- Add more sections for additional banks as needed -->
+        <!-- Bank 2 Section -->
+        <section>
+            <h2>Bank 2 Credit Card</h2>
+            <img src="bank2.jpg" alt="Bank 2 Credit Card">
+            <p>Get cashback on every purchase with Bank 2 Credit Card.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="bank2-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a href="https://bank2-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="section-container">
+        <!-- Bank 3 Section -->
+        <section>
+            <h2>Bank 3 Credit Card</h2>
+            <img src="bank3.jpg" alt="Bank 3 Credit Card">
+            <p>Earn cashback and rewards with Bank 3 Credit Card.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="bank3-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a href="https://bank3-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+            </div>
+        </section>
+
+        <!-- Bank 4 Section -->
+        <section>
+            <h2>Bank 4 Credit Card</h2>
+            <img src="bank4.jpg" alt="Bank 4 Credit Card">
+            <p>Get exclusive perks and cashback with Bank 4 Credit Card.</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="bank4-promo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a href="https://bank4-referral-link.com" target="_blank" class="video-link">Apply Now</a>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Credit Card Promotions. All rights reserved.</p>
